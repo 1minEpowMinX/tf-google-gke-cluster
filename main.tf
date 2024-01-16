@@ -20,7 +20,7 @@ resource "google_container_cluster" "this" {
     }
   }
   provisioner "local-exec" {
-    command = "gcloud container clusters get-credentials main --region=us-central1-c"
+    command = "gcloud container clusters get-credentials var.GKE_CLUSTER_NAME --region=var.GOOGLE_REGION"
   }
 }
 
