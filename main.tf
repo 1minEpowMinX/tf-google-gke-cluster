@@ -19,6 +19,9 @@ resource "google_container_cluster" "this" {
       mode = "GKE_METADATA"
     }
   }
+  provisioner "local-exec" {
+    command = "gcloud container clusters get-credentials main --region=us-central1-c"
+  }
 }
 
 resource "google_container_node_pool" "this" {
