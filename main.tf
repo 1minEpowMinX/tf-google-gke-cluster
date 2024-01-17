@@ -20,7 +20,7 @@ resource "google_container_cluster" "this" {
     }
   }
   provisioner "local-exec" {
-    command = "gcloud container clusters get-credentials ${var.GKE_CLUSTER_NAME} --region=${var.GOOGLE_REGION}"
+    command = "gcloud container clusters get-credentials ${var.GKE_CLUSTER_NAME} --project=${var.GOOGLE_PROJECT} --zone=${var.GOOGLE_REGION}"
   }
 }
 
